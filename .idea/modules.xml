@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Proyecto - Control de Extractos.iml" filepath="$PROJECT_DIR$/.idea/Proyecto - Control de Extractos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businessdomain/extract-control-module/extract-control-module.iml" filepath="$PROJECT_DIR$/businessdomain/extract-control-module/extract-control-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businessdomain/security-module/security-module.iml" filepath="$PROJECT_DIR$/businessdomain/security-module/security-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businessdomain/utilities-module/utilities-module.iml" filepath="$PROJECT_DIR$/businessdomain/utilities-module/utilities-module.iml" />
+    </modules>
+  </component>
+</project>
