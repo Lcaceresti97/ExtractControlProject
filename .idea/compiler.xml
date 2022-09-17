@@ -33,7 +33,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="extract-control-module" options="-parameters" />
       <module name="security-module" options="-parameters" />
-      <module name="utilities-module" options="-parameters --add-modules java.base" />
+      <module name="utilities-module" options="-parameters" />
     </option>
   </component>
 </project>
