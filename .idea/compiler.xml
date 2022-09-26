@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="extract-control-module" />
       </profile>
-      <profile name="Annotation profile for utilities-module" enabled="true">
+      <profile name="Annotation profile for security-module" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -33,7 +33,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="extract-control-module" options="-parameters" />
       <module name="security-module" options="-parameters" />
-      <module name="utilities-module" options="-parameters --add-modules java.base" />
+      <module name="utilities-module" options="-parameters" />
     </option>
   </component>
 </project>
