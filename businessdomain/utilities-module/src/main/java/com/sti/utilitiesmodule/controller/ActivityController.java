@@ -10,13 +10,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,8 +44,8 @@ public class ActivityController {
     public ResponseEntity<? extends Response<ActivityDto>> saveActivity(@RequestBody @Valid ActivityDto activityDto) {
 
         ActivityDto savedActivity = activityService.saveActivity(activityDto);
-        BaseResponse<ActivityDto> moduleBaseResponse = new BaseResponse<>();
-        return moduleBaseResponse
+        BaseResponse<ActivityDto> activityBaseResponse = new BaseResponse<>();
+        return activityBaseResponse
                 .buildResponseEntity(HttpStatus.CREATED, "Activity saved successfully", savedActivity);
     }
 
@@ -80,7 +76,7 @@ public class ActivityController {
             @io.swagger.annotations.ApiResponse(code = 204, message = "There are not transactions"),
             @ApiResponse(code = 500, message = "Internal error")})
     @GetMapping(params = {"page", "size", "sort"})
-    public ResponseEntity<? extends PageResponse<ActivityDto>> getMActivity(
+    public ResponseEntity<? extends PageResponse<ActivityDto>> getActivities(
             @RequestParam(defaultValue = "0")int page,
             @RequestParam(defaultValue = "5")int size,
             @RequestParam(defaultValue = "activityId, desc") String[] sort){
@@ -105,8 +101,8 @@ public class ActivityController {
     @PutMapping
     public ResponseEntity<? extends Response<ActivityDto>> updateActivity(@RequestBody @Valid ActivityDto activityDto) {
         ActivityDto updateActivity = activityService.updateActivity(activityDto);
-        BaseResponse<ActivityDto> moduleDtoBaseResponse = new BaseResponse<>();
-        return moduleDtoBaseResponse
+        BaseResponse<ActivityDto> activityDtoBaseResponse = new BaseResponse<>();
+        return activityDtoBaseResponse
                 .buildResponseEntity(HttpStatus.OK, "Activity Update Successfully", updateActivity);
     }
 
@@ -121,7 +117,7 @@ public class ActivityController {
             @io.swagger.annotations.ApiResponse(code = 204, message = "There are not transactions"),
             @ApiResponse(code = 500, message = "Internal error")})
     @DeleteMapping(value = "/{activityId}")
-    public ResponseEntity<? extends Response<String>> deleteModule(@PathVariable final String activityId) {
+    public ResponseEntity<? extends Response<String>> deleteActivity(@PathVariable final String activityId) {
         activityService.deleteActivity(activityId);
         BaseResponse<String> activityResponse = new BaseResponse<>();
         return activityResponse
