@@ -54,12 +54,12 @@ public class ActivityDto {
     private String transactionUser;
 
     @JsonProperty()
-    @ApiModelProperty(name = "registrationDate", required = true, example = "2022-02-25 16:43:27.485894", value = "Registration Date ")
+    @ApiModelProperty(name = "registrationDate", required = true, example = "2022-02-25", value = "Registration Date ")
     @NotNull
     @Temporal(TemporalType.DATE)
     private Date registrationDate;
 
     @JsonProperty("activityStatus")
-    @ApiModelProperty(name = "activityStatus", example = "ACTIVE OF INACTIVE", value = "Status")
+    @ApiModelProperty(name = "activityStatus", example = "ACTIVE", value = "Status")
     private ModelStatus activityStatus;
 }
